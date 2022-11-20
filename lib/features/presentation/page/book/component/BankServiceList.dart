@@ -1,36 +1,30 @@
-
-import 'package:bookstore/features/presentation/page/service/component/BankServiceList.dart';
-import 'package:bookstore/features/presentation/page/documents/DocumentSlider.dart';
-import 'package:bookstore/features/presentation/page/service/component/service_card.dart';
-import 'package:bookstore/features/presentation/widget/BigText.dart';
-import 'package:bookstore/features/presentation/widget/SmalText.dart';
+import 'package:bookstore/features/controllers/BranchServiceController.dart';
+import 'package:bookstore/features/presentation/page/book/component/service_card.dart';
+import 'package:bookstore/features/presentation/page/book/book_list_container.dart';
+import 'package:bookstore/features/utils/app_colors.dart';
+import 'package:bookstore/features/utils/app_constants.dart';
 import 'package:bookstore/features/utils/dimensions.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controllers/BranchServiceController.dart';
-import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_constants.dart';
-import '../main_service_list_container.dart';
+import '../../documents/PopularBook.dart';
 
-class BankServiceBody extends StatefulWidget {
-  const BankServiceBody({Key? key}) : super(key: key);
+class ServiceList extends StatefulWidget {
+  const ServiceList({Key? key}) : super(key: key);
   @override
-  State<BankServiceBody> createState() => _BankServiceBodyState();
+  State<ServiceList> createState() => _ServiceListState();
 }
 
-class _BankServiceBodyState extends State<BankServiceBody> {
+
+
+class _ServiceListState extends State<ServiceList> {
   @override
-  // Widget build(BuildContext context) {
-  //   return ServiceList();
-  // }
   Widget build(BuildContext context) {
     return         GetBuilder<BranchServiceController>(builder: (serviceController){
       return serviceController.isLoaded?
       Column(
         children: [
-          DocumentSlider(),
+          PopularBook(),
           ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -38,7 +32,7 @@ class _BankServiceBodyState extends State<BankServiceBody> {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: (){
-                    Get.to(()=>DetailServiceListContainer(serviceModel: serviceController.serviceList[index]),
+                    Get.to(()=>BookListContainer(serviceModel: serviceController.serviceList[index]),
                         transition: Transition.leftToRightWithFade,duration: const Duration(milliseconds: 800));
                   },
 
@@ -88,8 +82,5 @@ class _BankServiceBodyState extends State<BankServiceBody> {
       );
     });
   }
-
 }
 
-//1.23.58 Stoped Here
-//1.56.48 Stoped here

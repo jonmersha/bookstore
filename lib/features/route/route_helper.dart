@@ -1,4 +1,4 @@
-import 'package:bookstore/features/presentation/page/home/main_branch_operation_page.dart';
+import 'package:bookstore/features/presentation/page/home/main_landing_page.dart';
 import 'package:get/get.dart';
 
 
@@ -11,9 +11,9 @@ class RouteHelper{
   static String getInitial()=>'$initial';
 
   static List<GetPage> routes=[
-    GetPage(name: initial, page: ()=>MainOperationPage()),
+    GetPage(name: initial, page: ()=>MainLandingPage()),
     GetPage(name: initial, page: (){
-      return MainOperationPage();
+      return MainLandingPage();
     }),
     //GetPage(name: recommendedFood, page: ()=>MainFoodPage()),
   ];

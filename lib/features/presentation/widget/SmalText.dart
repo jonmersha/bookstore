@@ -20,6 +20,7 @@ class SmallText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
+        overflow: TextOverflow.ellipsis,
         fontFamily: 'Roboto',
           color: color,
           fontSize: size,

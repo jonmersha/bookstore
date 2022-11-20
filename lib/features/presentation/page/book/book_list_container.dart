@@ -1,8 +1,8 @@
 import 'package:bookstore/features/controllers/BranchServiceController.dart';
 import 'package:bookstore/features/controllers/service_detail_list_controller.dart';
 import 'package:bookstore/features/model/service_model.dart';
-import 'package:bookstore/features/presentation/page/service/component/BankServiceList.dart';
-import 'package:bookstore/features/presentation/page/service/detail_service_list.dart';
+import 'package:bookstore/features/presentation/page/book/component/BankServiceList.dart';
+import 'package:bookstore/features/presentation/page/book/book_list.dart';
 import 'package:bookstore/features/presentation/widget/BigText.dart';
 import 'package:bookstore/features/presentation/widget/app_icon.dart';
 import 'package:bookstore/features/presentation/widget/expandable_text.dart';
@@ -11,12 +11,12 @@ import 'package:bookstore/features/utils/app_constants.dart';
 import 'package:bookstore/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../home/main_branch_operation_page.dart';
+import '../home/main_landing_page.dart';
 
-class DetailServiceListContainer extends StatelessWidget {
+class BookListContainer extends StatelessWidget {
   final Service serviceModel;
   //final ServiceListDetailController detailedServiceController;
-  DetailServiceListContainer({Key? key, required this.serviceModel}) : super(key: key);
+  BookListContainer({Key? key, required this.serviceModel}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +31,9 @@ class DetailServiceListContainer extends StatelessWidget {
                 children: [
                   GestureDetector(
                       onTap: (){
-                        Get.to(()=>MainOperationPage(),transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 800));
+                        Get.to(()=>MainLandingPage(),transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 800));
                       },
-                      child: AppIcon(iconData: Icons.clear,backGroundColor: AppColors.mainColor,)
+                      child: AppIcon(iconData: Icons.arrow_back,backGroundColor: Colors.white,)
                   ),
                   AppIcon(iconData: Icons.shopping_cart_outlined,),
                 ],
@@ -78,7 +78,7 @@ class DetailServiceListContainer extends StatelessWidget {
                         text: ""+serviceModel.serviceDescription!)
                 ),
                // Text("${ serviceModel.serviceDescription!}: \n Related Service Displayed here"),
-                DetailServiceList(id: serviceModel.serviceID!,)
+                BookList(id: serviceModel.serviceID!,)
               ],
             ),
 

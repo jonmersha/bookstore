@@ -9,7 +9,7 @@ import 'package:bookstore/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../home/main_branch_operation_page.dart';
+import '../home/main_landing_page.dart';
 
 
 class BranchServiceList extends StatelessWidget {
@@ -32,7 +32,7 @@ class BranchServiceList extends StatelessWidget {
                   GestureDetector(
                     onTap: (){
                       //Get.to(()=>const MainFoodPage());
-                      Get.to(()=>MainOperationPage(),transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 800));
+                      Get.to(()=>MainLandingPage(),transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 800));
 
                     },
                       child: AppIcon(iconData: Icons.clear,backGroundColor: AppColors.mainColor,)

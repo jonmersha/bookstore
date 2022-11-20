@@ -1,22 +1,22 @@
 import 'package:bookstore/features/controllers/BranchServiceController.dart';
 import 'package:bookstore/features/controllers/service_detail_list_controller.dart';
-import 'package:bookstore/features/presentation/page/service/component/detail_service_card.dart';
-import 'package:bookstore/features/presentation/page/service/component/service_card.dart';
-import 'package:bookstore/features/presentation/page/service/main_service_list_container.dart';
+import 'package:bookstore/features/presentation/page/book/component/detail_service_card.dart';
+import 'package:bookstore/features/presentation/page/book/component/service_card.dart';
+import 'package:bookstore/features/presentation/page/book/book_list_container.dart';
 import 'package:bookstore/features/utils/app_colors.dart';
 import 'package:bookstore/features/utils/app_constants.dart';
 import 'package:bookstore/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DetailServiceList extends StatefulWidget {
+class BookList extends StatefulWidget {
   final int id;
-  DetailServiceList({Key? key, required this.id}) : super(key: key);
+  BookList({Key? key, required this.id}) : super(key: key);
   @override
-  State<DetailServiceList> createState() => _DetailServiceListState();
+  State<BookList> createState() => _BookListState();
 }
 
-class _DetailServiceListState extends State<DetailServiceList> {
+class _BookListState extends State<BookList> {
   @override
   Widget build(BuildContext context) {
     Get.find<ServiceListDetailController>().geServiceListByID(widget.id);
@@ -29,7 +29,7 @@ class _DetailServiceListState extends State<DetailServiceList> {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: (){
-                Get.to(()=>DetailServiceListContainer(serviceModel: serviceListDetailController.serviceDetailList[index]),
+                Get.to(()=>BookListContainer(serviceModel: serviceListDetailController.serviceDetailList[index]),
                     transition: Transition.leftToRightWithFade,duration: const Duration(milliseconds: 800));
               },
 

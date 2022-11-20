@@ -1,6 +1,4 @@
-
-import 'package:bookstore/features/controllers/document_section_controller.dart';
-import 'package:bookstore/features/presentation/page/home/main_branch_operation_page.dart';
+import 'package:bookstore/features/presentation/page/home/main_landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'features/helper/dependencies.dart' as dep;
@@ -11,11 +9,11 @@ import 'features/route/route_helper.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
-  runApp(BranchOperations());
+  runApp(BookStore());
 }
 
-class BranchOperations extends StatelessWidget {
-  const BranchOperations({Key? key}) : super(key: key);
+class BookStore extends StatelessWidget {
+  const BookStore({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -23,11 +21,10 @@ class BranchOperations extends StatelessWidget {
     Get.find<DocumentController>().getDocumentList();
     Get.find<BranchServiceController>().getServiceList();
 
-
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: '',
-      home: MainOperationPage(),
+      home: MainLandingPage(),
       initialRoute: RouteHelper.initial,
     );
   }

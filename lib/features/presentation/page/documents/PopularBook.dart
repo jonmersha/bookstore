@@ -11,20 +11,18 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DocumentSlider extends StatefulWidget {
-  const DocumentSlider({Key? key}) : super(key: key);
+class PopularBook extends StatefulWidget {
+  const PopularBook({Key? key}) : super(key: key);
   @override
-  State<DocumentSlider> createState() => _DocumentSliderState();
+  State<PopularBook> createState() => _PopularBookState();
 }
 
-class _DocumentSliderState extends State<DocumentSlider> {
+class _PopularBookState extends State<PopularBook> {
 
-  PageController pageController = PageController(viewportFraction: 0.85);
+  PageController pageController = PageController(viewportFraction: 0.60);
   var _currPageValue = 0.0;
   final double _scaleFactors = 0.8;
   final double _height = Dimensions.pageViewContainer;
-
-
   @override
   void initState() {
     super.initState();
@@ -48,12 +46,11 @@ class _DocumentSliderState extends State<DocumentSlider> {
         GetBuilder<DocumentController>(builder: (documentController){
           return documentController.isLoaded?
           Container(
-            height: Dimensions.pageView,
+            height: 160,
             child: PageView.builder(
                 controller: pageController,
                 itemCount: documentController.documentList.length,
                 itemBuilder: (context, position) {
-
                   return _buildPageItem(position, documentController.documentList[position],documentController);
                 }),
           )
@@ -116,6 +113,7 @@ class _DocumentSliderState extends State<DocumentSlider> {
             child: Align(
               alignment: Alignment.topCenter,
               child: Container(
+                width: 350,
                  alignment: Alignment.topCenter,
                 height: Dimensions.pageViewContainer,
                 padding: EdgeInsets.only(
@@ -147,7 +145,7 @@ class _DocumentSliderState extends State<DocumentSlider> {
             ),
           ),
          // SmallCard(productmodel: popularProductList)
-          SmallCard(documentList: popularProductController.documentList[index])
+          //SmallCard(documentList: popularProductController.documentList[index])
         ],
       ),
    );

@@ -6,7 +6,7 @@ import 'package:bookstore/features/controllers/document_section_controller.dart'
 import 'package:bookstore/features/model/document_model.dart';
 import 'package:bookstore/features/presentation/page/documents/document_section.dart';
 
-import 'package:bookstore/features/presentation/page/service/detail_service_list.dart';
+import 'package:bookstore/features/presentation/page/book/book_list.dart';
 import 'package:bookstore/features/presentation/widget/BigText.dart';
 import 'package:bookstore/features/presentation/widget/app_icon.dart';
 import 'package:bookstore/features/presentation/widget/expandable_text.dart';
@@ -15,7 +15,7 @@ import 'package:bookstore/features/utils/app_constants.dart';
 import 'package:bookstore/features/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../home/main_branch_operation_page.dart';
+import '../home/main_landing_page.dart';
 
 class DocumentSectionListContainer extends StatelessWidget {
   final Document documentModel;
@@ -35,7 +35,7 @@ class DocumentSectionListContainer extends StatelessWidget {
                 children: [
                   GestureDetector(
                       onTap: (){
-                        Get.to(()=>MainOperationPage(),transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 800));
+                        Get.to(()=>MainLandingPage(),transition: Transition.rightToLeftWithFade,duration: Duration(milliseconds: 800));
                       },
                       child: AppIcon(
                         iconData: Icons.arrow_back,

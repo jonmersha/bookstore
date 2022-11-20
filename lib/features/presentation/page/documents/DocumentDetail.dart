@@ -2,7 +2,7 @@ import 'package:bookstore/features/controllers/DocumentController.dart';
 import 'package:bookstore/features/model/document_model.dart';
 import 'package:bookstore/features/presentation/page/documents/pdf_viwer.dart';
 import 'package:bookstore/features/presentation/page/documents/share_doc.dart';
-import 'package:bookstore/features/presentation/page/home/main_branch_operation_page.dart';
+import 'package:bookstore/features/presentation/page/home/main_landing_page.dart';
 import 'package:bookstore/features/presentation/widget/app_icon.dart';
 import 'package:bookstore/features/utils/app_constants.dart';
 import 'package:bookstore/features/utils/dimensions.dart';
@@ -44,7 +44,7 @@ class DocumentDetail extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Get.to(() => const MainOperationPage(),
+                      Get.to(() => const MainLandingPage(),
                           transition: Transition.rightToLeftWithFade,
                           duration: const Duration(milliseconds: 800));
                     },

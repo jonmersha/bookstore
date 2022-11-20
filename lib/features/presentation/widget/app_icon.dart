@@ -13,7 +13,7 @@ class AppIcon extends StatelessWidget {
         this.iconSize=16,
        this.iconData=Icons.search,
        this.backGroundColor=Colors.white,
-       this.iconColor=Colors.black54,
+       this.iconColor=Colors.red,
        this.size=45})
       : super(key: key);
 
